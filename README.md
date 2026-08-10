@@ -11,6 +11,7 @@
 
 ### 增加页脚备注项
 - 原作者版本,只有ICP备案项,现新增公安备案项.
+- https://github.com/seldxc/onenice/blob/master/image.png?raw=true
 
 ### 主题特色
 - 响应式设计，完美支持PC端和移动端；
