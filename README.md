@@ -1,5 +1,5 @@
 # onenice
-> OneNice是一款超级简洁的WordPress主题，支持中英文，免费开源，无任何加密，无任何冗余代码，无任何授权限制，可随便使用。技术交流QQ群707252643，作者QQ942835420。。  
+> OneNice-custom是一款超级简洁的WordPress主题，支持中英文，免费开源，无任何加密，无任何冗余代码，无任何授权限制，可随便使用。技术交流QQ群707252643，原作者QQ942835420。。  
 
 ### 主题地址
 [https://www.xenice.com/zh/onenice/](https://www.xenice.com/zh/onenice/)
@@ -8,6 +8,9 @@
 [https://onenice.xenice.com/](https://onenice.xenice.com/)
 
 ![onenice](https://raw.githubusercontent.com/xenice/onenice/master/screenshot.png)
+
+### 增加页脚备注项
+- 原作者版本,只有ICP备案项,现新增公安备案项.
 
 ### 主题特色
 - 响应式设计，完美支持PC端和移动端；
