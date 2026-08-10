@@ -1,50 +1,46 @@
 <?php
 /**
- * @name        xenice options
- * @author      xenice <xenice@qq.com>
- * @version     1.0.0 2019-09-26
- * @link        http://www.xenice.com/
- * @package     xenice
+ * @name xenice options
+ * @author xenice <xenice@qq.com>
+ * @version 1.0.0 2019-09-26
+ * @link http://www.xenice.com/
+ * @package xenice
  */
- 
+
 namespace vessel;
 
-
-class Config extends Options
-{
+class Config extends Options {
     protected $key = 'yy';
     protected $name = ''; // Database option name
     protected $defaults = [];
-    
-    public function __construct()
-    {
+
+    public function __construct() {
         // #FF5E52 #f13c2f #fc938b Red
-		// #1fae67 #229e60 #35dc89 Green
-		// #ff4979 #f2295e #fb94af Pink
+        // #1fae67 #229e60 #35dc89 Green
+        // #ff4979 #f2295e #fb94af Pink
         $defaults = [
             'main_color' => '#0099FF',
             'dark_color' => '#007bff',
             'light_color'=> '#99CCFF',
             'link_color' => '#555555',
-            'bg_color'   => '#FFFFFF',
-            'fg_color'   => '#333333',
-            
+            'bg_color' => '#FFFFFF',
+            'fg_color' => '#333333',
             'hf_main_color' => '#0099FF',
             'hf_dark_color' => '#007bff',
             'hf_light_color'=> '#99CCFF',
             'hf_link_color' => '#555555',
-            'hf_bg_color'   => '#FFFFFF',
-            'hf_fg_color'   => '#333333',
-            
+            'hf_bg_color' => '#FFFFFF',
+            'hf_fg_color' => '#333333',
             'page_width' => 1200,
-            
         ];
+
         $this->name = 'xenice_' . $this->key;
+
         /**
-    	 * Filter default values
-    	 */
+         * Filter default values
+         */
         $defaults = apply_filters('yy_default_values', $defaults);
-        
+
         $this->defaults[] = [
             'id'=>'settings',
             'name'=> esc_html__('Theme settings','onenice'),
@@ -60,37 +56,37 @@ class Config extends Options
                             'inline' => true,
                             'fields'=>[
                                 [
-                                    'id'   => 'main_color',
+                                    'id' => 'main_color',
                                     'label' =>esc_html__('Main', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['main_color']
                                 ],
                                 [
-                                    'id'   => 'dark_color',
+                                    'id' => 'dark_color',
                                     'label' =>esc_html__('Dark', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['dark_color']
                                 ],
                                 [
-                                    'id'   => 'light_color',
+                                    'id' => 'light_color',
                                     'label' =>esc_html__('Light', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['light_color']
                                 ],
                                 [
-                                    'id'   => 'link_color',
+                                    'id' => 'link_color',
                                     'label' =>esc_html__('Link', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['link_color']
                                 ],
                                 [
-                                    'id'   => 'bg_color',
+                                    'id' => 'bg_color',
                                     'label' =>esc_html__('Background ', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['bg_color']
                                 ],
                                 [
-                                    'id'   => 'fg_color',
+                                    'id' => 'fg_color',
                                     'label' =>esc_html__('Foreground', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['fg_color']
@@ -102,37 +98,37 @@ class Config extends Options
                             'inline' => true,
                             'fields'=>[
                                 [
-                                    'id'   => 'hf_main_color',
+                                    'id' => 'hf_main_color',
                                     'label' =>esc_html__('Main', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['hf_main_color']
                                 ],
                                 [
-                                    'id'   => 'hf_dark_color',
+                                    'id' => 'hf_dark_color',
                                     'label' =>esc_html__('Dark', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['hf_dark_color']
                                 ],
                                 [
-                                    'id'   => 'hf_light_color',
+                                    'id' => 'hf_light_color',
                                     'label' =>esc_html__('Light', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['hf_light_color']
                                 ],
                                 [
-                                    'id'   => 'hf_link_color',
+                                    'id' => 'hf_link_color',
                                     'label' =>esc_html__('Link', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['hf_link_color']
                                 ],
                                 [
-                                    'id'   => 'hf_bg_color',
+                                    'id' => 'hf_bg_color',
                                     'label' =>esc_html__('Background ', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['hf_bg_color']
                                 ],
                                 [
-                                    'id'   => 'hf_fg_color',
+                                    'id' => 'hf_fg_color',
                                     'label' =>esc_html__('Foreground', 'onenice'),
                                     'type' => 'color',
                                     'value' => $defaults['hf_fg_color']
@@ -140,28 +136,28 @@ class Config extends Options
                             ]
                         ],
                         [
-                            'id'   => 'page_width',
+                            'id' => 'page_width',
                             'name' => esc_html__('Page Width', 'onenice'),
                             'type' => 'number',
-                            'min'  =>0,
+                            'min' =>0,
                             'label'=>'PX',
                             'value' => $defaults['page_width']
                         ],
                         [
-                            'id'   => 'site_icon',
+                            'id' => 'site_icon',
                             'name' => esc_html__('Site Icon', 'onenice'),
-                            'type'  => 'img',
+                            'type' => 'img',
                             'value' => STATIC_URL . '/images/icon.ico'
                         ],
                         [
-                            'id'   => 'static_lib_cdn',
+                            'id' => 'static_lib_cdn',
                             'name' => esc_html__('Static library CDN', 'onenice' ),
                             'type' => 'select',
                             'opts' =>[
-            					''                                  => esc_html__( 'Defalut', 'onenice' ),
-            					'https://cdn.staticfile.org'        => 'https://cdn.staticfile.org',
-            					'https://cdn.bootcdn.net/ajax/libs' => 'https://cdn.bootcdn.net/ajax/libs',
-            					'https://libs.cdnjs.net'            => 'https://libs.cdnjs.net',
+                                '' => esc_html__( 'Defalut', 'onenice' ),
+                                'https://cdn.staticfile.org' => 'https://cdn.staticfile.org',
+                                'https://cdn.bootcdn.net/ajax/libs' => 'https://cdn.bootcdn.net/ajax/libs',
+                                'https://libs.cdnjs.net' => 'https://libs.cdnjs.net',
                             ],
                             'value' => ''
                         ],
@@ -169,74 +165,73 @@ class Config extends Options
                             'name'=> esc_html__('Auxiliary functions', 'onenice'),
                             'fields'=>[
                                 [
-                                    'id'    => 'enable_theme_widgets',
+                                    'id' => 'enable_theme_widgets',
                                     'label' => esc_html__('Enable theme widgets', 'onenice'),
-                                    'type'  => 'checkbox',
+                                    'type' => 'checkbox',
                                     'value' => true
                                 ],
                                 [
-                                    'id'    => 'enable_theme_login_interface',
+                                    'id' => 'enable_theme_login_interface',
                                     'label' => esc_html__('Enable theme login interface', 'onenice'),
-                                    'type'  => 'checkbox',
+                                    'type' => 'checkbox',
                                     'value' => true
                                 ],
                                 [
-                                    'id'    => 'single_enable_highlight',
+                                    'id' => 'single_enable_highlight',
                                     'label' => esc_html__('Enable Code Highlight', 'onenice'),
-                                    'type'  => 'checkbox',
+                                    'type' => 'checkbox',
                                     'value' => true
                                 ],
                                 [
-                                    'id'    => 'use_post_first_image_as_thumbnail',
+                                    'id' => 'use_post_first_image_as_thumbnail',
                                     'label' => esc_html__('When the post does not have a thumbnail, use the first image of the post as a thumbnail', 'onenice'),
-                                    'type'  => 'checkbox',
+                                    'type' => 'checkbox',
                                     'value' => true
                                 ],
                                 [
-                                    'id'   => 'enable_css_animation',
-                                    'type'  => 'checkbox',
+                                    'id' => 'enable_css_animation',
+                                    'type' => 'checkbox',
                                     'value' => true,
-                                    'label'  => esc_html__('Enable css animation', 'onenice')
+                                    'label' => esc_html__('Enable css animation', 'onenice')
                                 ],
                                 [
-                                    'id'   => 'enable_like',
-                                    'type'  => 'checkbox',
+                                    'id' => 'enable_like',
+                                    'type' => 'checkbox',
                                     'value' => true,
-                                    'label'  => esc_html__('Give a like', 'onenice')
+                                    'label' => esc_html__('Give a like', 'onenice')
                                 ],
                                 [
-                                    'id'    => 'enable_back_to_top',
+                                    'id' => 'enable_back_to_top',
                                     'label' => esc_html__('Enable back to top button', 'onenice'),
-                                    'type'  => 'checkbox',
+                                    'type' => 'checkbox',
                                     'value' => false
                                 ],
                             ]
                         ],
-                        
                     ]
-                ],  #tab global
+                ], #tab global
                 [
                     'id' => 'header',
                     'title' => esc_html__('Header', 'onenice'),
                     'fields'=>[
                         [
-                            'id'   => 'site_logo',
+                            'id' => 'site_logo',
                             'name' => esc_html__('Site Logo', 'onenice'),
-                            'type'  => 'img',
+                            'type' => 'img',
                             'value' => STATIC_URL . '/images/logo.png',
                         ],
                         [
-                            'id'    => 'show_search',
-                            'name'  => esc_html__('Show Search', 'onenice'),
+                            'id' => 'show_search',
+                            'name' => esc_html__('Show Search', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
                         [
-                            'id'    => 'show_login_button',
-                            'name'  => esc_html__('Show Login Button', 'onenice'),
+                            'id' => 'show_login_button',
+                            'name' => esc_html__('Show Login Button', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
                     ]
@@ -246,16 +241,31 @@ class Config extends Options
                     'title' => esc_html__('Footer', 'onenice'),
                     'fields'=>[
                         [
-                            'id'   => 'icp_number',
+                            'id' => 'icp_number',
                             'name' => esc_html__('ICP Number', 'onenice'),
-                            'type'  => 'text',
+                            'type' => 'text',
                             'value' => ''
                         ],
+                        // 公安网备案号设置项
                         [
-                            'id'    => 'delete_theme_copyright',
-                            'name'  => esc_html__('Delete Theme Copyright', 'onenice'),
+                            'id' => 'wa_an_number',
+                            'name' => esc_html__('公安网备案号', 'onenice'),
+                            'type' => 'text',
+                            'value' => '',
+                            'desc' => esc_html__('填写公安网备案号，如：黔公网安备 52260102000000 号', 'onenice'),
+                        ],
+                        [
+                            'id' => 'wa_an_icon',
+                            'name' => esc_html__('公安备案图标', 'onenice'),
+                            'type' => 'img',
+                            'value' => '',
+                            'desc' => esc_html__('可选。上传公安备案小图标（显示在备案号前），也可留空只显示文字', 'onenice'),
+                        ],
+                        [
+                            'id' => 'delete_theme_copyright',
+                            'name' => esc_html__('Delete Theme Copyright', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => false
                         ],
                     ]
@@ -265,16 +275,16 @@ class Config extends Options
                     'title' => esc_html__('Slides', 'onenice'),
                     'fields'=>[
                         [
-                            'id'    => 'enable_slides',
-                            'name'  => esc_html__('Slides', 'onenice'),
+                            'id' => 'enable_slides',
+                            'name' => esc_html__('Slides', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
                         [
-                            'id'   => 'slides',
+                            'id' => 'slides',
                             'name' => esc_html__('Slides Settings', 'onenice'),
-                            'type'  => 'slide',
+                            'type' => 'slide',
                             'value' => [
                                 [
                                     'url'=>'https://www.xenice.com/',
@@ -295,58 +305,56 @@ class Config extends Options
                                     'desc'=>esc_html__('OneNice is a super concise WordPress theme, supporting both Chinese and English, free open source, no encryption, no redundant code, no authorization restrictions, can be used freely.', 'onenice')
                                 ],
                             ],
-                        ],
-                        
-                    ]
-                ], #tab slides
+                        ]
+                    ], #tab slides
+                ],
                 [
                     'id' => 'archive',
                     'title' => esc_html__('Archive', 'onenice'),
                     'fields'=>[
                         [
-                            'id'   => 'list_style',
+                            'id' => 'list_style',
                             'name' => esc_html__('List Style', 'onenice'),
                             'type' => 'radio',
                             'opts' =>[
-            					'text' => esc_html__( 'Text', 'onenice' ),
-            					'thumbnail' => esc_html__( 'Thumbnail', 'onenice' ),
+                                'text' => esc_html__( 'Text', 'onenice' ),
+                                'thumbnail' => esc_html__( 'Thumbnail', 'onenice' ),
                             ],
                             'value' => 'thumbnail'
                         ],
                         [
-                            'id'   => 'excerpt_length',
+                            'id' => 'excerpt_length',
                             'name' => esc_html__('Excerpt Length', 'onenice'),
                             'type' => 'number',
-                            'min'  =>0,
+                            'min' =>0,
                             'value' => 100,
                         ],
                         [
-                            'id'   => 'site_thumbnail',
+                            'id' => 'site_thumbnail',
                             'name' => esc_html__('Site Thumbnail', 'onenice'),
-                            'type'  => 'img',
+                            'type' => 'img',
                             'value' => STATIC_URL . '/images/thumbnail.png'
                         ],
                         [
-                            'id'   => 'site_loading_image',
+                            'id' => 'site_loading_image',
                             'name' => esc_html__('Site Loading Image', 'onenice'),
-                            'type'  => 'img',
+                            'type' => 'img',
                             'value' => STATIC_URL . '/images/loading.png'
                         ],
                         [
-                            'id'    => 'archive_show_date',
-                            'name'  => esc_html__('Show Date', 'onenice'),
+                            'id' => 'archive_show_date',
+                            'name' => esc_html__('Show Date', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
                         [
-                            'id'    => 'archive_show_author',
-                            'name'  => esc_html__('Show Author', 'onenice'),
+                            'id' => 'archive_show_author',
+                            'name' => esc_html__('Show Author', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
-                        
                     ]
                 ], #tab archive
                 [
@@ -354,60 +362,60 @@ class Config extends Options
                     'title' => esc_html__('Posts', 'onenice'),
                     'fields'=>[
                         [
-                            'id'    => 'single_show_date',
-                            'name'  => esc_html__('Show Date', 'onenice'),
+                            'id' => 'single_show_date',
+                            'name' => esc_html__('Show Date', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
                         [
-                            'id'    => 'single_show_author',
-                            'name'  => esc_html__('Show Author', 'onenice'),
+                            'id' => 'single_show_author',
+                            'name' => esc_html__('Show Author', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
                         [
-                            'id'    => 'single_show_tags',
-                            'name'  => esc_html__('Show Tags', 'onenice'),
+                            'id' => 'single_show_tags',
+                            'name' => esc_html__('Show Tags', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
                         [
-                            'id'    => 'single_show_previous_next',
-                            'name'  => esc_html__('Show Previous/Next Posts', 'onenice'),
+                            'id' => 'single_show_previous_next',
+                            'name' => esc_html__('Show Previous/Next Posts', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
                         [
-                            'id'    => 'show_related_posts',
-                            'name'  => esc_html__('Show Related Posts', 'onenice'),
+                            'id' => 'show_related_posts',
+                            'name' => esc_html__('Show Related Posts', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
                         [
-                            'id'    => 'single_show_share',
-                            'name'  => esc_html__('Show Share', 'onenice'),
+                            'id' => 'single_show_share',
+                            'name' => esc_html__('Show Share', 'onenice'),
                             'label' => esc_html__('Enable', 'onenice'),
-                            'type'  => 'checkbox',
+                            'type' => 'checkbox',
                             'value' => true
                         ],
                         [
-                            'id'    => 'single_disable_share_buttons',
-                            'name'  => esc_html__('Disable Share Buttons', 'onenice'),
-                            'desc'  => esc_html__('weibo,wechat,qq,douban,qzone,tencent,linkedin,diandian,google,twitter,facebook', 'onenice'),
-                            'type'  => 'textarea',
-                            'rows'  => 4,
+                            'id' => 'single_disable_share_buttons',
+                            'name' => esc_html__('Disable Share Buttons', 'onenice'),
+                            'desc' => esc_html__('weibo,wechat,qq,douban,qzone,tencent,linkedin,diandian,google,twitter,facebook', 'onenice'),
+                            'type' => 'textarea',
+                            'rows' => 4,
                             'value' => 'qzone,tencent,linkedin,diandian,google,twitter,facebook'
                         ],
                     ]
                 ], #tab posts
             ]
         ];
-	    parent::__construct();
-    }
 
+        parent::__construct();
+    }
 }
