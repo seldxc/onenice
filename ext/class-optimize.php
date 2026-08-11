@@ -6,7 +6,8 @@ class YYThemes_Optimize
     {
         add_filter('yythemes_ext_optimize_fields', [$this, 'fields']);
         
-        yy_ext_get('enable_classic_editor') && add_filter('use_block_editor_for_post', '__return_false');
+        // 文章编辑器由主题设置 enable_gutenberg 统一控制(见 functions.php)，此处不再单独禁用
+        // yy_ext_get('enable_classic_editor') && add_filter('use_block_editor_for_post', '__return_false');
         if(yy_ext_get('enable_classic_widget')){
             add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
             add_filter( 'use_widgets_block_editor', '__return_false' );
