@@ -165,6 +165,13 @@ class Config extends Options {
                             'name'=> esc_html__('Auxiliary functions', 'onenice'),
                             'fields'=>[
                                 [
+                                    'id' => 'enable_gutenberg',
+                                    'label' => esc_html__('Enable Gutenberg editor (block editor)', 'onenice'),
+                                    'type' => 'checkbox',
+                                    'value' => true,
+                                    'desc' => esc_html__('勾选=使用古腾堡块编辑器；取消勾选=使用经典编辑器', 'onenice'),
+                                ],
+                                [
                                     'id' => 'enable_theme_widgets',
                                     'label' => esc_html__('Enable theme widgets', 'onenice'),
                                     'type' => 'checkbox',
