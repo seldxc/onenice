@@ -21,6 +21,23 @@ function yy_get( $name) {
 }
 
 /**
+ * 古腾堡编辑器开关
+ * 主题设置 -> Global -> Auxiliary functions -> Enable Gutenberg editor
+ * 勾选=启用古腾堡块编辑器；取消勾选=禁用(回到经典编辑器)
+ */
+add_action( 'after_setup_theme', function() {
+    $gutenberg = yy_get( 'enable_gutenberg' );
+    if ( '' === $gutenberg ) { // 数据库未保存过该选项时，默认启用古腾堡
+        $gutenberg = true;
+    }
+    if ( ! $gutenberg ) {
+        add_filter( 'use_block_editor_for_post', '__return_false' );
+        add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
+        add_filter( 'use_widgets_block_editor', '__return_false' );
+    }
+} );
+
+/**
  * Get page
  *
  * @param string $template tempalge name.
