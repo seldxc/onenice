@@ -14,7 +14,7 @@
 ![图片描述](https://github.com/seldxc/onenice/blob/master/image.png?raw=true)
 
 ### 增加经典编辑器切换古德堡编辑器开关
-
+![图片描述](https://github.com/seldxc/onenice/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260811212540_11_30.png?raw=true)
 
 ### 主题特色
 - 响应式设计，完美支持PC端和移动端；
